@@ -3,35 +3,37 @@
         <div class="col-lg-12">
             <div class="form-group">
                 <label for="cantidad">Ingrese cantidad</label>
-                <input type="number" class="form-control form-control-lg" id="cantidad" placeholder="Ingrese cantidad">
+                <input
+                    type="number"
+                    class="form-control form-control-lg"
+                    id="cantidad"
+                    placeholder="Ingrese cantidad"
+                    [(ngModel)] ="cantidad"
+                >
             </div>
         </div><!--Fin col-lg-12-->
     </div><!--Fin row-->
     <div class="row">
         <div class="col-lg-6">
-            <div class="form-group">
-                <label for="tengo">Tengo</label>
-                <select class="form-control form-control-lg" id="tengo">
-                  <option>USD</option>
-                  <option>EUR</option>
-                  <option>LIB</option>
-                </select>
+        <div class="form-group">
+            <label for="tengo">Tengo</label>
+            <select class="form-control form-control-lg" id="tengo" [(ngModel)]="tengo">
+                <option *ngFor="let moneda of monedas">{{ moneda }}</option>
+            </select>
             </div>
         </div><!--Fin col-lg-6-->
         <div class="col-lg-6">
             <div class="form-group">
                 <label for="quiero">Quiero</label>
-                <select class="form-control form-control-lg" id="quiero">
-                  <option>USD</option>
-                  <option>EUR</option>
-                  <option>LIB</option>
+                <select class="form-control form-control-lg" id="quiero" [(ngModel)]="quiero">
+                  <option *ngFor="let moneda of monedas">{{moneda}}</option>
                 </select>
             </div>
         </div><!--Fin col-lg-6-->
     </div><!--Fin Row-->
     <h5 class="text-center mt-3">
-        <span class="badge badge-success">1000 USD</span>
+        <span class="badge badge-success">{{cantidad}} {{tengo}}</span>
         <span class="badge badge-secondary">SON</span>
-        <span class="badge badge-success">1000 USD</span>
+        <span class="badge badge-success">{{total}} {{quiero}}</span>
     </h5>
 </div>
